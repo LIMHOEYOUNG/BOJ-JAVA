@@ -11,6 +11,6 @@ public class Beakjoon27182 {
         int n= Integer.parseInt(st.nextToken());
         int m= Integer.parseInt(st.nextToken());
 
-        System.out.println(n>7?n-7:m-7);
+        System.out.println(n>7?n-7:m+7);
     }
 }
