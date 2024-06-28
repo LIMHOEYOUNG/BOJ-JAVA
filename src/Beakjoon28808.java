@@ -10,6 +10,19 @@ public class Beakjoon28808 {
         int n= Integer.parseInt(st.nextToken());
         int m= Integer.parseInt(st.nextToken());
 
-        
+        int ans=0;
+
+        for(int i=0;i<n;i++){
+            String str= br.readLine();
+
+            for(int j=0;j<m;j++){
+                if(str.charAt(j)=='+'){
+                    ans++;
+                    break;
+                }
+            }
+        }
+
+        System.out.println(ans);
     }
 }
