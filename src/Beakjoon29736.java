@@ -16,8 +16,11 @@ public class Beakjoon29736 {
         int x= Integer.parseInt(st.nextToken());
 
         int ans=0;
-        for(int i=k-x;i<=){
-            if() ans++;
+
+        //작거나 같음 범위 k-x<=....<=k+x, x만큼 덜 맞고 x만큼 더 맞은 사람과 친구
+        for(int i = k-x; i <= x+k ; i++){
+            if(i<a || b<i) continue;
+            ans++;
         }
 
         System.out.println(ans==0?"IMPOSSIBLE":ans);
