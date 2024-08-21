@@ -8,9 +8,6 @@ public class Beakjoon31495 {
 
         String str= br.readLine();
 
-        //System.out.println((str.substring(0,1).equals("\"")));
-        //System.out.println((str.substring(str.length()-1,str.length()).equals("\"")));
-        //System.out.println(str.substring(0,1) +" "+str.substring(str.length()-1,str.length()));
         if((str.length()<=2) || !((str.substring(0,1).equals("\""))&&(str.substring(str.length()-1,str.length()).equals("\"")))){
             System.out.println("CE");
         }
