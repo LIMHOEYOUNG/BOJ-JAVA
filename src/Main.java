@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 
+        /*
         int n= Integer.parseInt(br.readLine());
         int color_blind= 0;
         int nomarl_person= 0;
@@ -21,7 +22,13 @@ public class Main {
             }
         }
 
+         */
+        String str= br.readLine();
+        StringTokenizer st= new StringTokenizer(str.substring(1,str.length()-1),",");
 
+        while(st.hasMoreTokens()){
+            System.out.println(Integer.parseInt(st.nextToken()));
+        }
     }
 
     public void dfs(int x, int y){
