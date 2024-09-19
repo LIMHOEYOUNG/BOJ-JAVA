@@ -13,10 +13,10 @@ public class Beakjoon2953 {
         for(int i=1;i<=5;i++){
             StringTokenizer st= new StringTokenizer(br.readLine());
             int sum=0;
-
             for(int j=0;j<4;j++){
                 sum+=Integer.parseInt(st.nextToken());
             }
+
             if(ans<sum){
                 line=i;
                 ans=sum;
