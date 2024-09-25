@@ -9,12 +9,8 @@ public class Beakjoon31656 {
         String str= br.readLine();
         StringBuilder sb= new StringBuilder();
 
-        for(int i=0;i<str.length();i++){
-            if(sb.isEmpty()){
-                sb.append(str.charAt(i));
-                continue;
-            }
-
+        sb.append(str.charAt(0));
+        for(int i=1;i<str.length();i++){
             char c= str.charAt(i);
 
             if(sb.charAt(sb.length()-1)!=c) sb.append(c);
