@@ -20,7 +20,6 @@ public class Beakjoon3029 {
         int fT=3600*times[2][1]+60*times[2][2]+times[2][3];
 
         int tT= fT-sT;
-        //86400
 
         if(tT<=0){
             tT+=86400;
