@@ -8,6 +8,6 @@ public class Beakjoon24265 {
 
         long n= Long.parseLong(br.readLine());
 
-        System.out.println(((n-1)*n)/2+"\n"+2);
+        System.out.println((((n-1)*n)/2)+"\n"+2);
     }
 }
