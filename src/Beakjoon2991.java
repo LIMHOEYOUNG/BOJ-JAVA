@@ -22,8 +22,11 @@ public class Beakjoon2991 {
     private static int check(int target){
         int ans=0;
 
-        if((target%(a+b)!=0)&&(target%(a+b)<=a)) ans++;
-        if((target%(c+d)!=0)&&(target%(c+d)<=c)) ans++;
+        int check1= target%(a+b);
+        int check2= target%(c+d);
+
+        if((check1!=0)&&(check1<=a)) ans++;
+        if((check2!=0)&&(check2<=c)) ans++;
 
         return ans;
     }
