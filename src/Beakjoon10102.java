@@ -7,7 +7,17 @@ public class Beakjoon10102 {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 
         int n= Integer.parseInt(br.readLine());
+        String str= br.readLine();
 
-        System.out.print((n * (n + 1) * (n + 2)) / 2);
+        int a= 0;
+        int b= 0;
+
+        for(int i=0;i<str.length();i++){
+            char c= str.charAt(i);
+            if(c=='A') a++;
+            else if(c=='B') b++;
+        }
+
+        System.out.println(a>b?"A":a==b?"Tie":"B");
     }
 }
