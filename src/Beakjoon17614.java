@@ -14,7 +14,10 @@ public class Beakjoon17614 {
 
             for(int j=0;j<num.length();j++){
                 int check= num.charAt(j)-'0';
-                if(check!=0&&check%3==0) ans++;
+
+                if(check!=0&&check%3==0) {
+                    ans++;
+                }
             }
         }
 
