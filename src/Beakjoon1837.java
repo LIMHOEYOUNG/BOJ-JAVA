@@ -16,8 +16,6 @@ public class Beakjoon1837 {
         String ans= "GOOD";
 
         for(BigInteger i= BigInteger.TWO; k.compareTo(i)>0; i=i.add(BigInteger.ONE)){
-            //System.out.println("k.compareTo("+i+") = "+ k.compareTo(i));
-            //System.out.println("(p.remainder(i)).compareTo(BigInteger.ZERO) = "+(p.remainder(i)).compareTo(BigInteger.ZERO));
             if((p.remainder(i)).compareTo(BigInteger.ZERO)==0){
                 ans= "BAD "+i;
                 break;
