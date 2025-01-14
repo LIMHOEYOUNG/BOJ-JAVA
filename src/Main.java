@@ -7,15 +7,21 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 
-        StringTokenizer st= new StringTokenizer(br.readLine());
-        int p= Integer.parseInt(st.nextToken());
-        int q= Integer.parseInt(st.nextToken());
-        st= new StringTokenizer(br.readLine());
-        int a= Integer.parseInt(st.nextToken());
-        int b= Integer.parseInt(st.nextToken());
+        int t= Integer.parseInt(br.readLine());
+        StringBuilder sb= new StringBuilder();
 
-        int remain= q-p;
+        while(t-->0){
+            int s= Integer.parseInt(br.readLine());
+            int n= Integer.parseInt(br.readLine());
 
-        System.out.println(remain<=0?q*a:p*a+remain*b);
+            for(int i=0;i<n;i++){
+                StringTokenizer st= new StringTokenizer(br.readLine());
+                s+=Integer.parseInt(st.nextToken())*Integer.parseInt(st.nextToken());
+            }
+
+            sb.append(s+"\n");
+        }
+
+        System.out.println(sb);
     }
 }
