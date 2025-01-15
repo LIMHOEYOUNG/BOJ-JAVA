@@ -7,19 +7,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 
-        int t= Integer.parseInt(br.readLine());
+        int n= Integer.parseInt(br.readLine());
+        StringTokenizer st= new StringTokenizer(br.readLine());
         StringBuilder sb= new StringBuilder();
+        String words= st.nextToken();
+        int len= words.length();
+        sb.append(words.charAt(0));
 
-        while(t-->0){
-            int s= Integer.parseInt(br.readLine());
-            int n= Integer.parseInt(br.readLine());
+        for(int i=0;i<n-1;i++){
+            words= st.nextToken();
+            int check= words.length();
 
-            for(int i=0;i<n;i++){
-                StringTokenizer st= new StringTokenizer(br.readLine());
-                s+=Integer.parseInt(st.nextToken())*Integer.parseInt(st.nextToken());
-            }
+            sb.append(len>check?" ":words.charAt(len-1));
 
-            sb.append(s+"\n");
+            len= check;
         }
 
         System.out.println(sb);
