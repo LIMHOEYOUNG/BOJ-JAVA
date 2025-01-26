@@ -1,22 +1,23 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
-import java.util.StringTokenizer;
 
-public class Main {
+public class Beakjoon5789 {
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
-
         int n= Integer.parseInt(br.readLine());
-        String str= br.readLine();
-
-        String nums[]= {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"};
 
         StringBuilder sb= new StringBuilder();
-        for(int i=0;i<nums.length;i++){
-            if(str.contains(nums[i])){
-                sb.append((i+1)+" ");
+
+        for(int i=0;i<n;i++){
+            String str= br.readLine();
+            int len= str.length()/2;
+
+            if(str.charAt(len) == str.charAt(len-1)){
+                sb.append("Do-it\n");
+            }
+            else{
+                sb.append("Do-it-Not\n");
             }
         }
 
