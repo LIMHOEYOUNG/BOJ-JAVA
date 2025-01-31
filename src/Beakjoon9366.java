@@ -1,8 +1,10 @@
-import java.io.*;
-import java.math.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
-public class Main {
+public class Beakjoon9366 {
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 
@@ -12,12 +14,9 @@ public class Main {
         for(int i=1;i<=n;i++){
             StringTokenizer st= new StringTokenizer(br.readLine());
 
-            int a= Integer.parseInt(st.nextToken());
-            int b= Integer.parseInt(st.nextToken());
-            int c= Integer.parseInt(st.nextToken());
-
-            int nums[]= {a,b,c};
+            int nums[]= {Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken())};
             Arrays.sort(nums);
+
             if(nums[0]+nums[1]<=nums[2]) sb.append(String.format("Case #%d: invalid!\n",i));
             else if(nums[0]==nums[1] && nums[1]==nums[2]) sb.append(String.format("Case #%d: equilateral\n",i));
             else if(nums[0]==nums[1] || nums[1]==nums[2]) sb.append(String.format("Case #%d: isosceles\n",i));
