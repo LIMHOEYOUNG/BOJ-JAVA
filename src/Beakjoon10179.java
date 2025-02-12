@@ -1,7 +1,8 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main {
+public class Beakjoon10179 {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -16,14 +17,3 @@ public class Main {
         System.out.println(sb);
     }
 }
-
-/*
-$80.00
-$47.99
-$16.00
-
-$80.00
-$47.99
-$16.00
-
- */
