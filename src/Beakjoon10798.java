@@ -1,7 +1,8 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main {
+public class Beakjoon10798 {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -25,11 +26,3 @@ public class Main {
         System.out.println(sb);
     }
 }
-/*
-Aa0FfBb1GgCc2HhDd3IiEe4Jj
-Aa0FfBb1GgCc2HhDd3IiEe4Jj
-
-Aa0aPAf985Bz1EhCz2W3D1gkD6x
-Aa0aPAf985Bz1EhCz2W3D1gkD6x
-Aa0aPAf985Bz1EhCz2W3D1gkD6x
- */
