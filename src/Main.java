@@ -1,3 +1,4 @@
+import javax.swing.plaf.InsetsUIResource;
 import java.io.*;
 import java.util.*;
 
@@ -5,35 +6,44 @@ public class Main {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n= 1000-Integer.parseInt(br.readLine());
-        int ans= 0;
+        StringTokenizer st= new StringTokenizer(br.readLine());
+        int nums[]= new int [7];    // 1,2,3 / 4,5,6
 
-        if(n/500!=0){
-            ans+=(n/500);
-            n%=500;
-        }
-        if(n/100!=0){
-            ans+=(n/100);
-            n%=100;
-        }
-        if(n/50!=0){
-            ans+=(n/50);
-            n%=50;
-        }
-        if(n/10!=0){
-            ans+=(n/10);
-            n%=10;
-        }
-        if(n/5!=0){
-            ans+=(n/5);
-            n%=5;
-        }
-        if(n/1!=0){
-            ans+=(n/1);
+        for(int i=1;i<nums.length;i++){
+            nums[i]= Integer.parseInt(st.nextToken());
         }
 
-        System.out.print(ans);
+        int x_value= 0;
+        int y_value= 0;
 
+        if(nums[1]*nums[4]<0){
+            check1(nums);
+        }
+        else{
+            for(int i=5;i<nums.length;i++){
+                nums[i]=-nums[i];
+            }
+            check1(nums);
+        }
+
+        //System.out.print(x_value+" "+y_value);
+    }
+
+    public static void check1(int nums[]){
+        System.out.println(Arrays.toString(nums));
+
+        int y_value= (nums[4]*nums[3] + nums[1]*nums[6])/(nums[4]*nums[2] + nums[1]*nums[5]);
+        int x_value= (nums[3]-y_value*nums[2])/nums[1];
+        //System.out.println(nums[4]*nums[2]+"+"+nums[1]*nums[5]);
+        //System.out.println(nums[1]*nums[5]);
+        //System.out.println(nums[4]*nums[3]+"+"+nums[1]*nums[6]);
+        //System.out.println(nums[1]*nums[6]);
+
+        //System.out.println(nums[4]*nums[2] + nums[1]*nums[5]);
+        //System.out.println(nums[4]*nums[3] + nums[1]*nums[6]);
+        //System.out.println((nums[4]*nums[3] + nums[1]*nums[6])+"/"+(nums[4]*nums[2] + nums[1]*nums[5])+" = "+((nums[4]*nums[3] + nums[1]*nums[6])/(nums[4]*nums[2] + nums[1]*nums[5])));
+
+        System.out.print(x_value+" "+y_value);
     }
 }
 /*
