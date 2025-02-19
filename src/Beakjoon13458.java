@@ -1,8 +1,9 @@
-import javax.swing.plaf.InsetsUIResource;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class Main {
+public class Beakjoon13458 {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -12,7 +13,6 @@ public class Main {
         int b= Integer.parseInt(st2.nextToken());
         int c= Integer.parseInt(st2.nextToken());
 
-        //System.out.println(st.countTokens());
         long admin= 0;
         for(int i=0;i<n;i++){
             int p= Integer.parseInt(st.nextToken());
