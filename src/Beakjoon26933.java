@@ -11,7 +11,7 @@ public class Beakjoon26933 {
 
         int ans= 0;
 
-        for(int i=0;i<3;i++){
+        for(int i=0;i<n;i++){
             StringTokenizer st= new StringTokenizer(br.readLine());
             int h= Integer.parseInt(st.nextToken());
             int b= Integer.parseInt(st.nextToken());
