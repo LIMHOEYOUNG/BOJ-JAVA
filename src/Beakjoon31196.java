@@ -8,21 +8,24 @@ public class Beakjoon31196 {
 
         String str= br.readLine();
         StringBuilder sb= new StringBuilder();
-        int str_len= str.length();
+        int n= str.length();
 
-        int a= 1;
-        for(int i=1; i<str_len;i++){
-            int s= str_len/i;
+        int row= 0;
 
-            if(i*s==str_len && s>=i) {
-                a=i;
-            }
+        // 행 도출
+        for(int r=1;r<n;r++){
+            int s= n/r;
+
+            //주어진 조건 r ≤ s 및 n = rs인 행이 r
+            if(r<=s && r*s==n) row=r;
         }
 
-        int s= str_len/a;
-        for(int i=0;i<a;i++){
-            for(int j=0;j<s;j++){
-                sb.append(str.charAt(i + j*a));
+        //열 도출
+        int colum= n/row;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<colum;j++){
+                //위에서 아래로, 왼쪽에서 오른쪽으로
+                sb.append(str.charAt(row*j + i));
             }
         }
 

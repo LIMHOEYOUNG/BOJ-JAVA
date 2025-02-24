@@ -2,29 +2,24 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    public static int dx[]={-1,1,0,0};
+    public static int dy[]={-1,1,0,0};
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String str= br.readLine();
-        StringBuilder sb= new StringBuilder();
-        int str_len= str.length();
+        StringTokenizer st= new StringTokenizer(br.readLine());
+        int n= Integer.parseInt(st.nextToken());
+        int m= Integer.parseInt(st.nextToken());
 
-        int a= 1;
-        for(int i=1; i<str_len;i++){
-            int s= str_len/i;
+        int box[][]= new int[n][m];
 
-            if(i*s==str_len && s>=i) {
-                a=i;
+        for(int i=0;i<n;i++){
+            st= new StringTokenizer(br.readLine());
+
+            for(int j=0;j<m;j++){
+                box[i][j]= Integer.parseInt(st.nextToken());
+                if(box[i][j]==1);
             }
         }
-
-        int s= str_len/a;
-        for(int i=0;i<a;i++){
-            for(int j=0;j<s;j++){
-                sb.append(str.charAt(i + j*a));
-            }
-        }
-
-        System.out.println(sb);
     }
 }
