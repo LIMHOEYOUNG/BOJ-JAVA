@@ -1,7 +1,8 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main {
+public class Beakjoon10996 {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -12,6 +13,13 @@ public class Main {
         String star1= "* ";
         String star2= " *";
 
+        /*
+        윗줄 별 수 => 1(1) 2(1) | 3(2) 4(2) | 5(3) 6(3) | 7(4) 8(4) | 9(5) 10(5)
+        => N - (N/2)
+
+        아랫 줄 별 => 1(0) | 2(1) 3(1) | 4(2) 5(2) | 6(3) 7(3) | 8(4) 9(4) | 10(5)
+        => N/2
+         */
         star1= star1.repeat(n-(n/2));
         star2= star2.repeat(n/2);
 
@@ -22,5 +30,3 @@ public class Main {
         System.out.print(sb);
     }
 }
-
-//1463, 토마토 다시
