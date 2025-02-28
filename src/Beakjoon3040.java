@@ -1,8 +1,10 @@
-import java.io.*;
-import java.util.*;
-import java.util.Map.Entry;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-public class Main {
+public class Beakjoon3040 {
     private static LinkedHashMap<Integer, Boolean> hobit= new LinkedHashMap<>();
     private static int total= 0;
     public static void main(String[] args)throws IOException {
@@ -18,7 +20,7 @@ public class Main {
 
         check();
 
-        for(Entry<Integer,Boolean> entry1: hobit.entrySet()){
+        for(Map.Entry<Integer,Boolean> entry1: hobit.entrySet()){
             if(entry1.getValue()) sb.append(entry1.getKey()+"\n");
         }
 
@@ -26,8 +28,8 @@ public class Main {
     }
 
     public static void check(){
-        for(Entry<Integer,Boolean> entry1: hobit.entrySet()){
-            for(Entry<Integer,Boolean> entry2: hobit.entrySet()){
+        for(Map.Entry<Integer,Boolean> entry1: hobit.entrySet()){
+            for(Map.Entry<Integer,Boolean> entry2: hobit.entrySet()){
                 if(entry1.getKey().equals(entry2.getKey())) continue;
                 if((total-(entry1.getKey()+entry2.getKey()))==100){
                     entry1.setValue(false);
@@ -38,5 +40,3 @@ public class Main {
         }
     }
 }
-
-//1463, 토마토 다른 풀이로 가능 다시
