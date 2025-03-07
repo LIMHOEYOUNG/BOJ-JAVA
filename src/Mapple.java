@@ -4,23 +4,24 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Mapple {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
-
-        StringTokenizer st= new StringTokenizer(br.readLine());
-
-        String str[]={"STAR","UNIVERSE","PINKBEAN","UNIVERSESTAR","UNIVERSEPINKSTAR"};
-        int num[]= new int[26];
-
-        for(int i=0;i<str.length;i++){
-            String check= str[i];
-            for(int j=0; j<check.length();j++){
-                num[check.charAt(j)-'A']++;
-            }
+    public static void main(String[] args) throws Exception {
+        int n = nextInt(), r = 0;
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) arr[i] = nextInt();
+        for (int i = 0; i < n; i++) {
+            int a = nextInt(), b = nextInt();
+            if (arr[i] == 1 && b > a) r += b - a;
         }
+        System.out.println(r);
+    }
 
-        for(int i=0;i<26;i++){
-            System.out.println((char)(i+97)+" = "+num[i]);
+    static int nextInt() throws Exception {
+        int c, r = 0;
+        while ((c = System.in.read()) > 47){
+            r = r * 10 + c - 48;
+            System.out.print("c =>"+c+" r =>"+r+" |");
         }
+        System.out.println(r);
+        return r;
     }
 }
