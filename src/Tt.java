@@ -1,22 +1,31 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+class A{
+    static int aA= 10;
+    static void meA(){
 
-public class Tt {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("A랑께");
+    }
+    static void calc(){
+        System.out.println(aA);
+    }
+}
 
-        double to= 0.0;
-        for(double i=0;i<0.8;i+=0.1){
-            double ans = 0.2 + 25*i - 200*Math.pow(i,2) + 675*Math.pow(i,3) - 900*Math.pow(i,4) + 400*Math.pow(i,5);
-            System.out.println(String.format("%.4f",ans));
+class B extends A{
+    static void meA(){
+        System.out.println("B랑께");
+    }
+    static void calc(){
 
-            to+=(i==0.0 || i==0.8?ans:2*ans);
+    }
+}
 
-            //System.out.println("i = "+i+" ans = " +ans);
-        }
+public class Tt{
+    public static void main(String[] args) {
+        A a= new B();
 
-        System.out.println("answer = "+to);
+        a.meA();
+        System.out.println(a.aA);
+
+        ((B)a).meA();
+
     }
 }
