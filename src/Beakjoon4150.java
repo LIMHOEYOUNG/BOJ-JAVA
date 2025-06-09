@@ -14,7 +14,6 @@ public class Beakjoon4150 {
             BigInteger num[]= new BigInteger[n + 1];
             num[0]= BigInteger.ZERO;
             num[1]= BigInteger.ONE;
-            //num[2]= BigInteger.ONE;
 
             if (n > 1) {
                 for (int i=2; i<=n; i++) {
@@ -24,13 +23,6 @@ public class Beakjoon4150 {
 
             System.out.println(num[n]);
 
-            //System.out.println(num[n].toString().length());
         }
     }
 }
-/*
-354224848179261915075
-354224848179261915075
-354224848179261915075
-354224848179261915075
- */
