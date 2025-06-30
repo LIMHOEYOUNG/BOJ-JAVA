@@ -23,7 +23,7 @@ public class Beakjoon1149 {
 
         calc();
 
-        System.out.print(cost_min(cost_min(ans[n-1][0],ans[n-1][1]),ans[n-1][2]));
+        System.out.print(Math.min(Math.min(ans[n-1][0],ans[n-1][1]),ans[n-1][2]));
     }
 
     private static void calc(){
@@ -41,14 +41,11 @@ public class Beakjoon1149 {
         ans[0][1]= cost[0][1];
         ans[0][2]= cost[0][2];
         for(int i=1;i<ans.length;i++){
-            ans[i][0]= cost_min(ans[i-1][1],ans[i-1][2])+ cost[i][0];
-            ans[i][1]= cost_min(ans[i-1][0],ans[i-1][2])+ cost[i][1];
-            ans[i][2]= cost_min(ans[i-1][0],ans[i-1][1])+ cost[i][2];
-        }
-    }
 
-    private static int cost_min(int a, int b){
-        return a>b?b:a;
+            ans[i][0]= Math.min(ans[i-1][1],ans[i-1][2])+ cost[i][0];
+            ans[i][1]= Math.min(ans[i-1][0],ans[i-1][2])+ cost[i][1];
+            ans[i][2]= Math.min(ans[i-1][0],ans[i-1][1])+ cost[i][2];
+        }
     }
 }
 /*

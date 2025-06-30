@@ -1,13 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.StringTokenizer;
-import java.util.List;
-import java.util.Map;
-import java.util.ArrayList;
+import java.util.*;
 
-public class Main {
+public class Beakjoon2456 {
     private static int cnt[][];
     private static int score[];
     private static HashMap<Integer, Integer> candidate= new HashMap<>();
@@ -40,27 +36,34 @@ public class Main {
             cnt[3][c]+=1;
         }
 
+        //printCnt();
+
         if(sameScore.size()>1){
             int dropout= Integer.MIN_VALUE;
             //List<Integer> dropout= new ArrayList<>();
 
             //3점부터 확인
             for(int k=3;k>0;k--){
+                //System.out.println(k+" => "+Arrays.deepToString(cnt));
                 boolean dupcheck= false;
 
                 int maxElenment= Integer.MIN_VALUE;
-                int num= 0;
+                int num= Integer.MIN_VALUE;
 
                 //int i: sameScore
                 //System.out.println("sameScore의 크기 = "+sameScore.size());
                 for(int i: sameScore){
 
                     //상위 문제에서 최대 투표수 보다 미달인 ㅈㅏ
-                    if(i== dropout) continue;
+                    if(i== dropout) {
+                        //System.out.println("통과합니다");
+                        continue;
+                    }
 
                     //System.out.println(k+" 점의 투표수 확인 maxelement = "+maxElenment+"\t"+i+"번 후보의 투표수 = "+cnt[i][k]);
                     if(maxElenment!=cnt[i][k]){
                         if(maxElenment<cnt[i][k]){
+                            dropout= dropout!=Integer.MIN_VALUE?dropout:num;
                             num= i;
                             maxElenment= cnt[i][k];
                             dupcheck= false;
@@ -76,11 +79,15 @@ public class Main {
                     //System.out.println(k+" 점수의 최고 횟수 = "+maxElenment);
                 }
 
-                if(dupcheck && k==3){
+                //System.out.println("dropout = "+dropout+" k = "+k+" dupcheck = "+dupcheck+" maxElenment = "+maxElenment);
+
+                if(dupcheck){
+                    //System.out.println("if 문 "+dupcheck+" "+k+" dropout = "+dropout);
                     System.out.println(0+" "+scoreMax);
                     break;
                 }
                 else if(!dupcheck){
+                    //System.out.println("else if 문 "+!dupcheck+" "+k+" dropout = "+dropout);
                     System.out.println(num+" "+candidate.get(num));
                     break;
                 }
@@ -112,16 +119,6 @@ public class Main {
                     sameScore.add(i);
                 }
             }
-
-            /*
-            for(int i=1;i<4;i++){
-                System.out.print(i+" 후보의 점수별 투표수 ");
-                for(int j=3;j>0;j--){
-                    System.out.print(j+" 점 = "+cnt[i][j]+"\t");
-                }
-                System.out.println();
-            }
-            */
         }
 
         /*
@@ -135,6 +132,15 @@ public class Main {
         */
 
         scoreMax= max;
+    }
+    private static void printCnt(){
+        for(int i=1;i<4;i++){
+            System.out.print(i+" 후보의 점수별 투표수 ");
+            for(int j=3;j>0;j--){
+                System.out.print(j+" 점 = "+cnt[i][j]+"\t");
+            }
+            System.out.println();
+        }
     }
 }
 /*
@@ -162,4 +168,24 @@ public class Main {
 1 3 2
 2 3 1
 3 2 1
+
+4
+2 3 1
+2 1 3
+2 1 3
+2 3 1
+
+3
+2 3 1
+2 1 3
+2 2 2
+
+6
+3 3 3
+3 3 3
+2 3 1
+2 1 2
+1 1 1
+2 2 2
+
  */
