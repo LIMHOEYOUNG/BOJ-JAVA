@@ -1,0 +1,15 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Beakjoon14623 {
+    public static void main(String[] args)throws IOException{
+        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println(Long.toBinaryString(Long.parseLong(br.readLine(),2)*Long.parseLong(br.readLine(),2)));
+    }
+}
+/*
+111111111111111111111111111110000000000000000000000000000001
+111111111111111111111111111110000000000000000000000000000001
+ */
