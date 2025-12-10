@@ -20,8 +20,14 @@ public class Beakjoon10996 {
         아랫 줄 별 => 1(0) | 2(1) 3(1) | 4(2) 5(2) | 6(3) 7(3) | 8(4) 9(4) | 10(5)
         => N/2
          */
-        star1= star1.repeat(n-(n/2));
-        star2= star2.repeat(n/2);
+        for(int i=0;i<(n-(n/2));i++){
+            star1= star1+star1;
+        }
+        for(int i=0;i<(n/2);i++){
+            star2= star2+star2;
+        }
+        //star1= star1.repeat(n-(n/2));
+        //star2= star2.repeat(n/2);
 
         for(int i=0;i<n;i++){
             sb.append(star1+"\n"+star2+"\n");
